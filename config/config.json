@@ -1,19 +1,19 @@
 {
-    "testData": true,
+    "testData": false,
     "deploySAP": true,
-    "deploySFDC": true,
-    "deployMarketing": true,
+    "deploySFDC": false,
+    "deployMarketing": false,
     "turboMode": true,
-    "projectIdSource": "",
-    "projectIdTarget": "",
-    "targetBucket": "",
-    "location": "US",
+    "projectIdSource": "dev-sap-cortex",
+    "projectIdTarget": "dev-sap-cortex",
+    "targetBucket": "dev-sap-cortex-dags",
+    "location": "us-west1",
     "languages": [
         "E",
         "S"
     ],
     "currencies": [
-        "USD"
+        "USD", "AUD"
     ],
     "testDataProject": "kittycorn-public",
     "k9": {
@@ -25,13 +25,13 @@
     "SAP": {
         "deployCDC": true,
         "datasets": {
-            "cdc": "",
-            "raw": "",
+            "cdc": "sap_cdc_cortex",
+            "raw": "sap_raw_cortex",
             "ml": "ML_MODELS",
-            "reporting": "REPORTING"
+            "reporting": "sap_reporting_cortex"
         },
-        "SQLFlavor": "ecc",
-        "mandt": "100"
+        "SQLFlavor": "S4",
+        "mandt": "010"
     },
     "SFDC": {
         "deployCDC": true,

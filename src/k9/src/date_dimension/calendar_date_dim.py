@@ -37,14 +37,14 @@ with DAG(
             task_id='calendar_date_dim',
             sql='calendar_date_dim.sql',
             create_disposition='WRITE_TRUNCATE',
-            bigquery_conn_id='sap_cdc_bq',
+            gcp_conn_id='bigquery_default',
             use_legacy_sql=False)
     else:
         calendar_date_dim = BigQueryOperator(
             task_id='calendar_date_dim',
             sql='calendar_date_dim.sql',
             create_disposition='WRITE_TRUNCATE',
-            gcp_conn_id='sap_cdc_bq',
+            gcp_conn_id='bigquery_default',
             use_legacy_sql=False)
     stop_task = DummyOperator(task_id='stop')
     # pylint:disable=pointless-statement
